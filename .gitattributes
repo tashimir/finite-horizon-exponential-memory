@@ -1,0 +1,12 @@
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.cff text eol=lf
+*.txt text eol=lf
+*.py text eol=lf
+*.cpp text eol=lf
+*.tsv text eol=lf
+*.pdf binary
+*.npz binary

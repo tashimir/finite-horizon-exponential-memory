@@ -1,0 +1,8 @@
+{
+  "decimal_precision": 100,
+  "solver_sha256": "2a9d253c41df3c64c8e0f0e26074e8e6530844abdfff06f27ca33c934ff92494",
+  "numpy_longdouble_precision": 15,
+  "checks": 78,
+  "all_passed": true,
+  "reference_scope": "Exact formulas and independent high-precision calculations; selected numerical cases do not enclose all floating-point errors."
+}

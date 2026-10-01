@@ -1,0 +1,82 @@
+{
+  "brackets": [
+    {
+      "N": 256,
+      "left_lower95_pct": 0.06622188906029018,
+      "left_saving_pct": 0.07008693874591243,
+      "left_upper95_pct": 0.07395198843153468,
+      "r_left": 1.2,
+      "r_right": 1.3,
+      "right_lower95_pct": -0.01199131387833447,
+      "right_saving_pct": -0.00888140935234457,
+      "right_upper95_pct": -0.005771504826354671
+    },
+    {
+      "N": 1024,
+      "left_lower95_pct": 0.015040851552749564,
+      "left_saving_pct": 0.016144164118985636,
+      "left_upper95_pct": 0.017247476685221707,
+      "r_left": 1.3,
+      "r_right": 1.4,
+      "right_lower95_pct": -0.007766474167212537,
+      "right_saving_pct": -0.006913149575140104,
+      "right_upper95_pct": -0.006059824983067672
+    },
+    {
+      "N": 4096,
+      "left_lower95_pct": 0.00037260791336531026,
+      "left_saving_pct": 0.0006537420805539287,
+      "left_upper95_pct": 0.000934876247742547,
+      "r_left": 1.4,
+      "r_right": 1.45,
+      "right_lower95_pct": -0.0027168926445975353,
+      "right_saving_pct": -0.0024748574613300536,
+      "right_upper95_pct": -0.002232822278062572
+    },
+    {
+      "N": 16384,
+      "left_lower95_pct": 0.0008392177641942831,
+      "left_saving_pct": 0.0009297018158252837,
+      "left_upper95_pct": 0.0010201858674562844,
+      "r_left": 1.4,
+      "r_right": 1.45,
+      "right_lower95_pct": -0.0003473448007076191,
+      "right_saving_pct": -0.000272188498314144,
+      "right_upper95_pct": -0.00019703219592066888
+    },
+    {
+      "N": 65536,
+      "left_lower95_pct": 1.0493540332544017e-05,
+      "left_saving_pct": 3.365300840346616e-05,
+      "left_upper95_pct": 5.68124764743883e-05,
+      "r_left": 1.45,
+      "r_right": 1.5,
+      "right_lower95_pct": -0.00028021215907517367,
+      "right_saving_pct": -0.00026143953908398646,
+      "right_upper95_pct": -0.00024266691909279926
+    },
+    {
+      "N": 262144,
+      "left_lower95_pct": 3.371529733703261e-05,
+      "left_saving_pct": 4.067909538757424e-05,
+      "left_upper95_pct": 4.7642893438115864e-05,
+      "r_left": 1.45,
+      "r_right": 1.5,
+      "right_lower95_pct": -6.579767703550503e-05,
+      "right_saving_pct": -6.036144468531646e-05,
+      "right_upper95_pct": -5.4925212335127894e-05
+    },
+    {
+      "N": 1048576,
+      "left_lower95_pct": 1.7901810209778056e-05,
+      "left_saving_pct": 1.995682878456357e-05,
+      "left_upper95_pct": 2.2011847359349086e-05,
+      "r_left": 1.45,
+      "r_right": 1.5,
+      "right_lower95_pct": -1.4844105588193808e-05,
+      "right_saving_pct": -1.329697967221505e-05,
+      "right_upper95_pct": -1.1749853756236291e-05
+    }
+  ],
+  "interpretation": "Brackets between sampled r values; pointwise intervals do not provide simultaneous confidence for a zero boundary"
+}

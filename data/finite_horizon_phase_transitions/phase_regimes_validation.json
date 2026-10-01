@@ -1,0 +1,30 @@
+{
+  "dataset": "finite_horizon_phase_transitions",
+  "dimension": 2,
+  "phase_boundary": 1.0,
+  "subleading_correction_crossover": 1.5,
+  "size_pair_factor": 4,
+  "displayed_larger_size_exponents": [
+    16,
+    22,
+    28,
+    32
+  ],
+  "quotient_point_count": 308,
+  "correction_balance_point_count": 52,
+  "joint_scale_definition": "subcritical scale for r<1, Lambert scale for r=1, stationary scale for r>1",
+  "correction_balance_definition": "-log(N delta_N^3)/log(N)",
+  "parameter_pair_count": 336,
+  "ratio_count": 28,
+  "size_count": 12,
+  "common_size_grid": true,
+  "ratios_exact": true,
+  "sizes_exact": true,
+  "accepted_parameter_pairs": 336,
+  "rejected_parameter_pairs": 0,
+  "maximum_location_relative_change": 0.0009194437964994824,
+  "maximum_value_relative_change": 1.7345757256709167e-08,
+  "maximum_derivative_scaled": 6.898728175615329e-07,
+  "minimum_left_neighbor_gap": 0.001357613359004972,
+  "minimum_right_neighbor_gap": 0.0013639524752306895
+}

@@ -1,0 +1,35 @@
+{
+  "scope": "Costs at fixed parameters; no claim of certified minimization.",
+  "results": [
+    {
+      "r": 0.0,
+      "N": 1024,
+      "trajectories": 32768,
+      "seed": 20260912,
+      "mean": 690.6704672037051,
+      "standard_error": 0.04406899895874358,
+      "stored_objective": 690.6266816349022,
+      "standardized_difference": 0.9935684911730556
+    },
+    {
+      "r": 1.0,
+      "N": 1024,
+      "trajectories": 32768,
+      "seed": 20260912,
+      "mean": 671.1750171787164,
+      "standard_error": 0.04375009919866528,
+      "stored_objective": 671.1316770431736,
+      "standardized_difference": 0.9906294233995901
+    },
+    {
+      "r": 2.0,
+      "N": 1024,
+      "trajectories": 32768,
+      "seed": 20260912,
+      "mean": 648.5122095129003,
+      "standard_error": 0.04456245462346255,
+      "stored_objective": 648.4756861363275,
+      "standardized_difference": 0.8195997478475766
+    }
+  ]
+}

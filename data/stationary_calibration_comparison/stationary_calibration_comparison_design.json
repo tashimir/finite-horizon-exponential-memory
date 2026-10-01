@@ -1,0 +1,17 @@
+{
+  "distribution": "Independent uniform unit-disk inputs",
+  "initialization": "x_0=p_0",
+  "scenarios": 1921,
+  "orders": [
+    40,
+    64,
+    96
+  ],
+  "pilot": false,
+  "method": "Radial moments with transition increments and binary block averaging",
+  "mean_cost_difference": "Potential baseline subtracted before comparing costs",
+  "numerical_error": "Series tail and order comparison; no certified floating-point enclosure",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "longdouble_precision": 15
+}

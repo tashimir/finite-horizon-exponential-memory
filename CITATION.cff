@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the associated article and identify the version or commit of these data."
+title: "Finite-horizon exponential memory: data, figures and numerical programs"
+type: dataset
+version: "1.0.0"
+authors:
+  - family-names: "de Castro"
+    given-names: "Pedro M. M."
+    orcid: "https://orcid.org/0000-0002-9470-7458"
+keywords:
+  - "finite-horizon optimization"
+  - "exponential memory"
+  - "singular asymptotics"
+  - "phase transitions"
+preferred-citation:
+  type: unpublished
+  title: "Finite-horizon phase transitions in optimal exponential memory for Euclidean connections"
+  authors:
+    - family-names: "de Castro"
+      given-names: "Pedro M. M."
+      orcid: "https://orcid.org/0000-0002-9470-7458"
+  year: 2026

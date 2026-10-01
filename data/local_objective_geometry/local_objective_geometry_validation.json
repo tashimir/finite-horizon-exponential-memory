@@ -1,0 +1,25 @@
+{
+  "dataset": "local_objective_geometry",
+  "dimension": 2,
+  "scaled_parameters": [
+    1.0,
+    1.1,
+    2.0
+  ],
+  "size_exponents": [
+    14,
+    22,
+    30
+  ],
+  "z_interval": [
+    0.7,
+    1.4
+  ],
+  "display_chebyshev_order": 129,
+  "verification_chebyshev_order": 65,
+  "derivative_method": "degree-18 Chebyshev projection on Chebyshev-Lobatto samples",
+  "maximum_C0_resolution_difference": 0.0004007718517508446,
+  "maximum_C1_resolution_difference": 0.0010081781909284104,
+  "maximum_C2_resolution_difference": 0.00449834968817564,
+  "maximum_operator_row_error": 7.993605777301126e-14
+}

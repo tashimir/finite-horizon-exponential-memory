@@ -1,0 +1,145 @@
+% Numerical methods and reproduction guide for the finite-horizon exponential-memory manuscript.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,microtype}
+\usepackage[margin=27mm]{geometry}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage{orcidlink}
+\usepackage{xurl}
+\newcommand{\E}{\mathbb E}
+\newcommand{\dd}{\,\mathrm d}
+\AtBeginDocument{\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}\setlength{\abovedisplayshortskip}{0pt plus 2pt}\setlength{\belowdisplayshortskip}{4pt plus 2pt minus 2pt}}
+\title{Supplementary Material 1\\[5pt]\large Numerical methods and reproducibility guide}
+\author{Pedro M. M. de Castro\,\orcidlink{0000-0002-9470-7458}\\\small Centro de Inform\'atica, Universidade Federal de Pernambuco\\\small Recife, Pernambuco, Brazil\\\small\href{mailto:pmmc@cin.ufpe.br}{pmmc@cin.ufpe.br}}
+\date{}
+\makeatletter
+\renewcommand{\maketitle}{\begin{center}{\Large\@title\par}\vspace{1em}{\@author\par}\end{center}\vspace{0.8em}}
+\makeatother
+\hypersetup{pdftitle={Supplementary Material 1: Numerical methods and reproducibility guide},pdfauthor={Pedro M. M. de Castro}}
+\begin{document}
+\maketitle
+\noindent This supplement accompanies \emph{Finite-horizon phase transitions in optimal exponential memory for Euclidean connections}. It explains the independent moment calculation used to compare finite-horizon calibration with numerical stationary minimization, and identifies the supplied data and programs.
+
+\section{A moment representation of the disk objective}
+We compare memory choices through their expected costs over the same finite horizon, retaining the initial state in each evaluation. Radial moments make this calculation tractable: rotational symmetry gives a closed recurrence, and the potential series converts those moments into costs. Identify the unit disk with a subset of the complex plane. Independent inputs $P_t$ are uniform in the disk, $X_0=P_0$, and
+\[
+X_{t+1}=(1-\delta)X_t+\delta P_{t+1},\qquad 0\leq\delta\leq1.
+\]
+Put $\gamma=1-\delta$. For $\delta>0$, define the stationary state by
+\[
+X_{\rm st}=\delta\sum_{j=0}^{\infty}\gamma^jP'_j,
+\]
+where the $P'_j$ are independent uniform disk points, independent of the next input. The nonnegative weights sum to one, so this series converges in the disk and its law is invariant under the update. The marginal laws of $X_t$ and $X_{\rm st}$ are rotationally invariant. Write $m_k(t)=\E|X_t|^{2k}$ and $m_k^{\rm st}=\E|X_{\rm st}|^{2k}$. Initially, $m_k(0)=1/(k+1)$. At $\delta=0$, the stationary comparator uses the continuous limiting moments $m_0^{\rm st}=1$ and $m_k^{\rm st}=0$ for $k\geq1$; the finite trajectory itself remains at $P_0$.
+
+The disk potential measures the mean powered distance from a point at radius $r$ to a fresh uniform input. Rotational symmetry places the observation point on the real axis. For $1\leq\alpha<2$, polar coordinates give
+\begin{equation}
+g_\alpha(r)=\frac1\pi\int_0^1\!\int_0^{2\pi}
+(\rho^2+r^2-2\rho r\cos\theta)^{\alpha/2}\rho\,\dd\theta\,\dd\rho,
+\quad 0\leq r\leq1.\label{eq:potential}
+\end{equation}
+Here $\rho$ and $\theta$ are the radius and angle of the input point, and $1/\pi$ normalizes disk area. To evaluate this integral through moments, use
+\[
+g_\alpha(r)=\sum_{k=0}^{\infty}c_kr^{2k},\qquad
+c_0=\frac{2}{2+\alpha},\qquad
+c_{k+1}=c_k\frac{(k-\alpha/2)(k-1-\alpha/2)}{(k+1)^2}.
+\]
+This recurrence follows directly from the geometry. Translating the disk and applying the divergence theorem gives, for $r<1$,
+\[
+g_\alpha'(r)=-\frac1\pi\int_0^{2\pi}
+(1-2r\cos\theta+r^2)^{\alpha/2}\cos\theta\,\dd\theta.
+\]
+Put $a=\alpha/2$ and, for $|z|<1$, write the binomial expansion $(1-z)^a=\sum_{k\geq0}b_kz^k$, where $b_0=1$ and $b_{k+1}=(k-a)b_k/(k+1)$. Expanding the two conjugate factors in the integrand and integrating the cosine gives $g_\alpha'(r)=-2\sum_{k\geq0}b_{k+1}b_kr^{2k+1}$. Integration in $r$ yields $c_{k+1}=-b_{k+1}b_k/(k+1)$ and hence the recurrence above. For $k\geq1$, the product formula $b_k=-a\prod_{j=1}^{k-1}(1-a/j)/k$ gives $|b_k|\leq a/k$. Thus $|c_k|\leq a^2/[k^2(k-1)]$ for $k\geq2$, proving absolute and uniform convergence on $0\leq r\leq1$. Continuity of the integral then extends the identity to $r=1$.
+
+For a state $X=X_t$ and its independent next input $P=P_{t+1}$, expanding $(\gamma X+\delta P)^k(\gamma\overline X+\delta\overline P)^k$ gives an exact closed recurrence:
+\begin{equation}
+m_k(t+1)=\sum_{j=0}^{k}\binom{k}{j}^{\!2}
+\frac{\gamma^{2j}\delta^{2(k-j)}}{k-j+1}\,m_j(t).\label{eq:recurrence}
+\end{equation}
+Indeed, independence and rotational invariance make every mixed term with unequal exponents vanish, while $\E|P|^{2\ell}=1/(\ell+1)$. The diagonal term is $\gamma^{2k}m_k(t)$. Thus the stationary moments follow successively from
+\begin{equation}
+m_k^{\rm st}=\frac{\displaystyle\sum_{j=0}^{k-1}\binom{k}{j}^{\!2}
+\gamma^{2j}\delta^{2(k-j)}m_j^{\rm st}/(k-j+1)}{1-\gamma^{2k}},\qquad k\geq1.\label{eq:stationary}
+\end{equation}
+The denominator is evaluated without subtracting nearly equal numbers. Factoring one power of $\delta$ from both numerator and denominator also avoids forming extremely small squared update fractions before division.
+
+\section{Stable finite-horizon evaluation}
+At long horizons, two choices can have nearly equal total costs, so cancellation can obscure the sign of a small difference. We compute transition increments and cost differences directly, while binary summation keeps the number of matrix operations logarithmic in the horizon. For truncation order $K$, let $m(t)=(m_0(t),\ldots,m_K(t))^\mathsf{T}$ and let $T$ be the $(K+1)\times(K+1)$ triangular matrix satisfying $m(t+1)=Tm(t)$ in Eq.~\eqref{eq:recurrence}. The calculation stores $D=T-I$. For $0\leq\delta<1$, its diagonal entries are evaluated as
+\[
+D_{kk}=\operatorname{expm1}\bigl(2k\operatorname{log1p}(-\delta)\bigr).
+\]
+Here \texttt{log1p} and \texttt{expm1} evaluate $\log(1+u)$ and $e^u-1$ accurately near zero. Their use preserves the small transition increments when $\delta$ is of order $N^{-1}$ and $N$ is as large as $2^{40}$. At $\delta=1$, set $D_{00}=0$ and $D_{kk}=-1$ for $k\geq1$ directly.
+
+For a block of $L$ steps, put $A_L=T^L-I$ and $B_L=L^{-1}\sum_{t=0}^{L-1}T^t$. Direct multiplication gives
+\[
+A_{2L}=2A_L+A_L^2,\qquad B_{2L}=B_L+\tfrac12 A_LB_L.
+\]
+Starting from $A_1=D$ and $B_1=I$, binary decomposition of $N$ assembles the weighted block means and advances the state by $m\mapsto m+A_Lm$. This gives $\overline m_k=N^{-1}\sum_{t=0}^{N-1}m_k(t)$ with a number of matrix operations proportional to $\log N$.
+
+We compare average costs after removing their common constant. With $h=(1-\delta)^\alpha+\delta^\alpha$, the truncated excess is
+\[
+E_{N,K}(\delta)=c_0(h-1)+h\sum_{k=1}^{K}c_k\overline m_k.
+\]
+The term $h-1$ is evaluated from its small constituents. For finite-balance choice $\widehat\delta$ and comparator $\delta_B$, the saving in percent is computed as
+\[
+S_B=100\frac{E_{N,K}(\delta_B)-E_{N,K}(\widehat\delta)}{c_0+E_{N,K}(\delta_B)}.
+\]
+This form avoids subtracting two total costs dominated by the same constant. Positive $S_B$ denotes a percentage cost reduction; when $S_B<0$, the positive quantity $-S_B$ is the percentage cost increase plotted in the fixed-power comparison.
+
+The scalar balance has a related cancellation when solved in $v=\log\widehat\delta$. For the disk, write $\varepsilon=\alpha-1$ and $q=q_{2,\alpha}=(14-\alpha)/16$. The difference $e^{\varepsilon v}-q$ is evaluated as $q\operatorname{expm1}(u)$, with $u=\varepsilon v-\log q>0$. Evaluating this difference through \texttt{expm1} preserves its small positive value during root finding.
+
+\section{Truncation and numerical minimization}
+Truncating the potential series gives the objective used in the numerical search for a stationary choice. We first bound the omitted tail using the signs of the coefficients, then describe the search. These steps separate the approximation of the cost from optimization over the update fraction. For $k\geq2$ and $1\leq\alpha<2$, $c_k<0$. Put $P_K(r)=\sum_{k=0}^{K}c_kr^{2k}$, $K\geq1$, and
+\[
+C_K=P_K(1)-g_\alpha(1),\qquad
+g_\alpha(1)=\frac{2^{\alpha+2}}{\pi(\alpha+2)}
+\int_{-\pi/2}^{\pi/2}\cos^{\alpha+2}\theta\,\dd\theta.
+\]
+The boundary value uses polar coordinates centered at a point on the unit circle: a ray making angle $\theta$ with the inward radius traverses the disk over a distance $2\cos\theta$. Integrating the powered distance along that ray gives the displayed one-dimensional integral. For $0\leq r\leq1$, the omitted terms therefore satisfy
+\[
+0\leq P_K(r)-g_\alpha(r)\leq C_Kr^{2K+2}.
+\]
+Writing $h=\gamma^\alpha+\delta^\alpha$, the stationary and finite objective approximations are
+\[
+\Phi_K=h\sum_{k=0}^{K}c_km_k^{\rm st},\qquad
+F_{N,K}=h\sum_{k=0}^{K}c_k\sum_{t=0}^{N-1}m_k(t).
+\]
+Their series-truncation errors are bounded above by $hC_Km_{K+1}^{\rm st}$ and $hC_K\sum_{t=0}^{N-1}m_{K+1}(t)$, respectively. One additional moment, at order $K+1$, evaluates these analytical bounds on truncation. Order comparisons assess truncation stability; exact identities and independent higher-precision calculations assess arithmetic. The reported numerical bounds do not enclose every rounding error.
+
+The stationary parameter is found on a logarithmic grid over $0<\delta<1$, with additional points around the analytical stationary scale. Each sampled local minimum is refined by bounded minimization and then by solving the stationary derivative equation in its bracket. Differentiating Eq.~\eqref{eq:stationary} gives the required moment derivatives. The limiting value $c_0$ at $\delta=0$ is also considered. Minimization uses $\Phi_K-c_0$ assembled from the small terms. This procedure gives a numerical minimizer; global minimization over the continuous interval is not certified. At power one the stationary limiting choice is $\delta=0$.
+
+The initialization constant is also available from the potential coefficients. Termwise integration gives
+\[
+H_{2,\alpha}=2\int_0^1\frac{(1-r^2)(g_\alpha(r)-c_0)}{r}\,\dd r
+=\sum_{k\geq1}\frac{c_k}{k(k+1)}.
+\]
+For $H_K=\sum_{k=1}^{K}c_k/[k(k+1)]$, the coefficient signs imply
+\[
+0\leq H_K-H_{2,\alpha}\leq \frac{C_K}{(K+1)(K+2)}.
+\]
+The expanded comparison uses $K=512$ for this constant. The scalar balance is solved in $\log\delta$.
+
+\section{Comparison design and accuracy checks}
+The comparison asks whether the finite-balance rule remains beneficial when its reference is changed from an analytical stationary scale to a numerically minimized stationary objective. Joint-window powers probe the theorem's regime, while fixed powers test behavior beyond it. We use moment-based costs and separate checks of truncation, arithmetic and minimization so that a computed sign change can be interpreted at the available numerical accuracy.
+
+The 1,921 scenarios use horizons $N=2^k$, $k=8,10,\ldots,40$. Joint-window powers satisfy $\alpha=1+r\lambda^\star(2)/\log N$, where $\lambda^\star(2)=2\log(16/13)$. The 101 values of $r$ combine the grid $0,0.05,\ldots,3$ with $1.20,1.21,\ldots,1.70$. The twelve fixed powers are $1.01$, $1.02$, $1.03$, $1.05$, $1.075$, $1.10$, $1.15$, $1.20$, $1.25$, $1.30$, $1.40$ and $1.50$.
+
+Orders $K=40$ and $64$ are compared, with refinement to $96$ when needed. Gain-zero brackets are refined separately, using orders $64$, $96$ and $128$, until their width is at most $10^{-4}$ in $r$ or the sign test is inconclusive. A reported endpoint sign requires the series-tail and order-change estimates to be less than one tenth of the gain magnitude. These estimates describe truncation and order stability. Independent higher-precision calculations check arithmetic and stationary-root accuracy at selected extremes and bracket endpoints. The intervals locate computed sign changes and are not certified continuous root enclosures.
+
+Useful exact checks are $g_1(1)=32/(9\pi)$, $F_{2,1,N}(1)=128N/(45\pi)$, and $g_2(r)=1/2+r^2$. At power two the series terminates and the stationary minimizer is $\delta=2-\sqrt{10}/2$. For $\delta>0$, an exact first-moment check is
+\[
+\overline m_1=\frac{\delta}{2(2-\delta)}
++\frac{(1-\delta)\bigl[1-(1-\delta)^{2N}\bigr]}{N\delta(2-\delta)^2}.
+\]
+Its limit at $\delta=0$ is $1/2$, consistent with the frozen uniform initial state. Direct recurrence sums at small horizons provide additional checks.
+
+\section{Data and reproduction}
+The supplementary files provide the numerical evidence and the programs needed for the computations described in this supplement. Scientific figure names connect each illustration to its data and reproduction command.
+\begin{itemize}
+\item \nolinkurl{SupplementaryMaterial2.zip} contains programs, the six figure PDFs, figure source data, analytical checks, paired moments and deterministic comparisons. Reproduction commands and field definitions are given in \texttt{REPRODUCING.md} and \texttt{DATA\_DICTIONARY.md}, respectively.
+\item \nolinkurl{SupplementaryMaterial3.zip} contains the complete trajectory-cost arrays for the twelve-scenario numerical-reference experiment. Extract it into the same directory as Supplementary Material~2. It supplies \nolinkurl{data/calibration_experiment/calibration_trajectory_costs.npz}.
+\end{itemize}
+The file \nolinkurl{FIGURE_CATALOG.csv} maps each scientific figure name to its PDF, data and reproduction command. The comparison is named \nolinkurl{stationary_calibration_comparison}. Its figure can be regenerated directly from the supplied comparison and crossing CSV files. Supplementary Material~3 is needed only to inspect the twelve-scenario experiment at trajectory level. The expanded paired experiment supplies block moments that reconstruct every reported estimate and confidence interval; its full trajectory arrays are retained by the author.
+
+The finite-horizon phase and local-objective figures can be rendered from their supplied arrays. Their original multidimensional radial-Poisson solver is available from the author on reasonable request. The supplied moment-method and Monte Carlo implementations have the separate reproduction commands and numerical qualifications stated in the guide.
+
+\end{document}

@@ -1,0 +1,218 @@
+{
+  "scope": "Symbolic identities, initialization constants, the exact one-dimensional finite objective at power one, and roots of the scalar critical model.",
+  "symbolic": {
+    "coefficient_l2": true,
+    "coefficient_first_derivative_l2": true,
+    "coefficient_second_derivative_l2": true,
+    "fourth_state_moment_leading": true,
+    "chi_at_one": true,
+    "q_identity": true,
+    "H_1_1_exact": true
+  },
+  "dimension_constants": [
+    {
+      "d": 1,
+      "H": 0.16666666666666666,
+      "lambda_star": 0.36464311358790924,
+      "critical_prefactor": 1.0473600095236668,
+      "reported_H": 0.166667,
+      "within_rounding": true
+    },
+    {
+      "d": 2,
+      "H": 0.24453317379349931,
+      "lambda_star": 0.415278729556489,
+      "critical_prefactor": 1.0426366656349362,
+      "reported_H": 0.244533,
+      "within_rounding": true
+    },
+    {
+      "d": 3,
+      "H": 0.2892857142857146,
+      "lambda_star": 0.44628710262841953,
+      "critical_prefactor": 1.0393951846187273,
+      "reported_H": 0.289286,
+      "within_rounding": true
+    },
+    {
+      "d": 5,
+      "H": 0.338504088504088,
+      "lambda_star": 0.48232411363377614,
+      "critical_prefactor": 1.0353108611908153,
+      "reported_H": 0.338504,
+      "within_rounding": true
+    },
+    {
+      "d": 10,
+      "H": 0.3874833953478104,
+      "lambda_star": 0.5205661965273329,
+      "critical_prefactor": 1.0306344755423722,
+      "reported_H": 0.387483,
+      "within_rounding": true
+    },
+    {
+      "d": 20,
+      "H": 0.41739519068718783,
+      "lambda_star": 0.5452883901744808,
+      "critical_prefactor": 1.027446410076002,
+      "reported_H": 0.417395,
+      "within_rounding": true
+    },
+    {
+      "d": 50,
+      "H": 0.4375206514096678,
+      "lambda_star": 0.5625845487060198,
+      "critical_prefactor": 1.0251497392362374,
+      "reported_H": 0.437521,
+      "within_rounding": true
+    },
+    {
+      "d": 100,
+      "H": 0.4446380800125824,
+      "lambda_star": 0.568838853633929,
+      "critical_prefactor": 1.0243073321858123,
+      "reported_H": 0.444638,
+      "within_rounding": true
+    }
+  ],
+  "exact_1d_finite": [
+    {
+      "N": 16,
+      "delta": "0.223878737366595723272120050215",
+      "sqrtN_delta": "0.89551494946638289309",
+      "six_scaled_excess": "1.0534987549137957861",
+      "absolute_slope": "1.36454e-107",
+      "curvature_positive": true
+    },
+    {
+      "N": 256,
+      "delta": "0.0606365743607092173938762433995",
+      "sqrtN_delta": "0.9701851897713474783",
+      "six_scaled_excess": "1.0151213253108424201",
+      "absolute_slope": "8.0848e-107",
+      "curvature_positive": true
+    },
+    {
+      "N": 4096,
+      "delta": "0.0155043527997776601881570633004",
+      "sqrtN_delta": "0.99227857918577025204",
+      "six_scaled_excess": "1.003875493522953892",
+      "absolute_slope": "8.81823e-106",
+      "curvature_positive": true
+    },
+    {
+      "N": 65536,
+      "delta": "0.00389864292815655915364555761106",
+      "sqrtN_delta": "0.99805258960807914333",
+      "six_scaled_excess": "1.0009746514242436575",
+      "absolute_slope": "3.67185e-104",
+      "curvature_positive": true
+    },
+    {
+      "N": 1048576,
+      "delta": "0.000976086011974124117434475037249",
+      "sqrtN_delta": "0.99951207626150309625",
+      "six_scaled_excess": "1.000244021357495669",
+      "absolute_slope": "1.62651e-103",
+      "curvature_positive": true
+    }
+  ],
+  "critical_scalar_model": [
+    {
+      "logN": 64,
+      "path": "centered",
+      "epsilon": "0.00648873014932014068",
+      "w": "3.2322370696921252976",
+      "model_root_over_Delta": "0.9955432450003373273",
+      "w_over_sqrtL_div_lambda": "0.167784912990891825"
+    },
+    {
+      "logN": 64,
+      "path": "below_weak",
+      "epsilon": "0.00453560514932014068",
+      "w": "28.95474642243314064",
+      "model_root_over_Delta": "0.98204181062384494354",
+      "w_over_sqrtL_div_lambda": "1.5030362886172912135"
+    },
+    {
+      "logN": 64,
+      "path": "above_weak",
+      "epsilon": "0.00844185514932014068",
+      "w": "0.000023414258697782211077",
+      "model_root_over_Delta": "0.99999990199914464353",
+      "w_over_sqrtL_div_lambda": "1.2154304506902461524e-6"
+    },
+    {
+      "logN": 256,
+      "path": "centered",
+      "epsilon": "0.00162218253733003517",
+      "w": "4.3212766137428926044",
+      "model_root_over_Delta": "0.99863155808531728676",
+      "w_over_sqrtL_div_lambda": "0.11215839138858220556"
+    },
+    {
+      "logN": 256,
+      "path": "below_weak",
+      "epsilon": "0.00137804191233003517",
+      "w": "47.442285079813242446",
+      "model_root_over_Delta": "0.99134107199943411567",
+      "w_over_sqrtL_div_lambda": "1.2313607422001010509"
+    },
+    {
+      "logN": 256,
+      "path": "above_weak",
+      "epsilon": "0.00186632316233003517",
+      "w": "8.0871484807675248491e-13",
+      "model_root_over_Delta": "0.99999999999999924674",
+      "w_over_sqrtL_div_lambda": "2.099012966767392413e-14"
+    },
+    {
+      "logN": 1024,
+      "path": "centered",
+      "epsilon": "0.000405545634332508792",
+      "w": "5.4701012132080986739",
+      "model_root_over_Delta": "0.99959426327262269612",
+      "w_over_sqrtL_div_lambda": "0.070988021323952137547"
+    },
+    {
+      "logN": 1024,
+      "path": "below_weak",
+      "epsilon": "0.000375028056207508792",
+      "w": "86.118957170318328273",
+      "model_root_over_Delta": "0.99582763443881231085",
+      "w_over_sqrtL_div_lambda": "1.1176053476381088914"
+    },
+    {
+      "logN": 1024,
+      "path": "above_weak",
+      "epsilon": "0.000436063212457508792",
+      "w": "9.096898880475341605e-29",
+      "model_root_over_Delta": "1.0",
+      "w_over_sqrtL_div_lambda": "1.1805464406211396775e-30"
+    },
+    {
+      "logN": 4096,
+      "path": "centered",
+      "epsilon": "0.000101386408583127198",
+      "w": "6.6592540907172143473",
+      "model_root_over_Delta": "0.99988255920746952724",
+      "w_over_sqrtL_div_lambda": "0.043210102790420267872"
+    },
+    {
+      "logN": 4096,
+      "path": "below_weak",
+      "epsilon": "0.0000975717113175021981",
+      "w": "163.63459989104189319",
+      "model_root_over_Delta": "0.99796866757381695342",
+      "w_over_sqrtL_div_lambda": "1.0617807617849417387"
+    },
+    {
+      "logN": 4096,
+      "path": "above_weak",
+      "epsilon": "0.000105201105848752198",
+      "w": "1.5698313447141259739e-61",
+      "model_root_over_Delta": "1.0",
+      "w_over_sqrtL_div_lambda": "1.018621197579432786e-63"
+    }
+  ]
+}

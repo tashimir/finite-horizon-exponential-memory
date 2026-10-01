@@ -1,0 +1,30 @@
+{
+  "dataset": "finite_horizon_phase_transitions",
+  "shard_index": 2,
+  "shard_count": 4,
+  "dimension": 2,
+  "lambda_star": 0.4152787295564891,
+  "radial_orders": [
+    128,
+    256,
+    512
+  ],
+  "angular_orders": [
+    32,
+    64,
+    128
+  ],
+  "state_bins": [
+    33,
+    65,
+    129
+  ],
+  "finite_size_evaluation_method": "direct_for_N_le_2048_else_stationary_Poisson_with_negligible_terminal_tail",
+  "direct_Poisson_validation_N": 4096,
+  "direct_Poisson_relative_value_difference": 2.51667978069924e-14,
+  "direct_Poisson_critical_relative_value_difference": 3.77055858198577e-14,
+  "location_relative_tolerance": 0.0025,
+  "value_relative_tolerance": 0.001,
+  "case_count": 84,
+  "cgal_version": "6.1.1-I-900"
+}

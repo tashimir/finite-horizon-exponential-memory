@@ -1,0 +1,28 @@
+{
+  "d": 2,
+  "distribution": "Uniform unit disk",
+  "initialization": "x_0=p_0",
+  "horizons": [
+    256,
+    1024,
+    4096
+  ],
+  "r_values": [
+    0.0,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "trajectories": 32768,
+  "seed": 2026091202,
+  "alpha_rule": "1+r*lambda_star(2)/log(N)",
+  "common_inputs_within_horizon": true,
+  "independent_horizon_streams": true,
+  "policy_selection": "Fixed before simulation",
+  "uncertainty": "Pointwise 95% paired delta-method intervals; no simultaneous coverage claim",
+  "baseline": "Analytical stationary scale, not the exact stationary optimizer",
+  "reference": "Stored numerical parameter, simulated again on the common trajectories",
+  "unavailable_reference_horizons": [
+    256
+  ]
+}
